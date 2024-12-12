@@ -239,4 +239,19 @@ if axb == identidade:
 else:
      print("A segunda matriz não é inversa da primeira")
 
-# 9)          
+# 9) Jogo da Velha
+tabuleiro = [["x", "zero", "x"],
+             ["x", "zero", "zero"],
+             ["zero", "zero", "zero"]]
+
+# Verificar cada linha para encontrar uma jogada vencedora
+for linha in tabuleiro:
+    if linha.count("x") == 2 and linha.count("zero") == 1:  # Duas 'x' e uma 'zero'
+        linha[linha.index("zero")] = "x"  # Substituir 'zero' por 'x' para vencer
+        print("Jogada vencedora encontrada!")
+    else:
+        print("Não dá para vencer nessa linha.")
+
+print("\nTabuleiro atualizado:")
+for linha in tabuleiro:
+    print(linha)
