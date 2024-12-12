@@ -1,6 +1,6 @@
-tabuleiro = [["x", "zero", "zero"],
-             ["zero", "zero", "x"],
-             ["zero", "zero", "x"]]
+tabuleiro = [["zero", "zero", "x"],
+             ["zero", "zero", "zero"],
+             ["x", "zero", "x"]]
 
 venceu = False
 
@@ -53,4 +53,28 @@ if venceu == False:
             print("Você venceu o jogo fechando uma coluna")
             print("O tabuleiro terminou assim: ")
             for i in tabuleiro:
-                print(i)                
+                print(i)
+        else:
+            print("Não foi possível vencer fechando uma coluna")
+            pergunta_3 = input("Você quer tentar vencer fechando uma diagonal?(S/N): ")
+    else:
+        pergunta_3 = input("Você quer tentar vencer fechando uma diagonal?(S/N): ")        
+
+if venceu == False: 
+    if pergunta_3 == 'S':                                
+        if (tabuleiro[0][0] == "x" and tabuleiro[2][2] == "x" and tabuleiro[1][1]=="zero"):
+            tabuleiro[1][1] = "x"
+            print("Você venceu o jogo fechando uma diagonal")
+            print("O tabuleiro terminou assim: ")
+            for i in tabuleiro:
+                print(i)
+            venceu = True
+        elif (tabuleiro[0][2]=="x" and tabuleiro[2][0]=="x" and tabuleiro[1][1]=="zero"):
+            tabuleiro[1][1] = "x"
+            print("Você venceu o jogo fechando uma diagonal")
+            print("O tabuleiro terminou assim: ")
+            for i in tabuleiro:
+                print(i)
+            venceu = True
+        else:
+            print("Que pena! Parece que não é possível resolver o problema")
