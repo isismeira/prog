@@ -242,3 +242,40 @@ else:
 # 9) Jogo da Velha
 # Programei um jogo da velha completo na pasta avulsos
 
+# 10) Média dos alunos
+matriz_turma_1 = []
+matriz_turma_2 = []
+
+contador_1 = 0
+contador_2 = 0
+
+while contador_1 < 3:
+    aluno = list(map(int, input(f"Digite aqui as duas notas do aluno {contador_1 + 1} da primeira sala: ").split()))
+    media = (aluno[0] + aluno[1])/2
+    aluno.append(media)
+    matriz_turma_1.append(aluno)
+    contador_1 += 1
+
+while contador_2 < 3:
+    aluno = list(map(int, input(f"Digite aqui as duas notas do aluno {contador_2 + 1} da primeira sala: ").split()))
+    media = (aluno[0] + aluno[1])/2
+    aluno.append(media)
+    matriz_turma_2.append(aluno)
+    contador_2 += 1
+
+media_turma_1 = 0
+media_turma_2 = 0
+media_turmas = []
+
+for i in matriz_turma_1:
+    media_turma_1 += i[-1]
+
+for i in matriz_turma_2:
+    media_turma_2 += i[-1]
+
+media_turma_1 = media_turma_1/3
+media_turma_2 = media_turma_2/3
+
+media_turmas.append(media_turma_1)
+media_turmas.append(media_turma_2)
+
