@@ -1,0 +1,17 @@
+#) FÁCIL
+
+testes = int(input())
+contador = 1
+
+while contador <= testes:
+    values = input().split(" ")
+    a = values[0]
+    b = values[1]
+    if b == a[len(a)-len(b):len(a)]:
+        print("encaixa")
+        contador += 1
+    else:
+        print("nao encaixa")
+        contador += 1
+
+
