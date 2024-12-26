@@ -18,7 +18,7 @@ def ordena(pais1, pais2):
     elif pais1[0] > pais2[0]:
         return 1
     
-    return 1 
+    return 0
 
 paises = int(input())
 
@@ -30,7 +30,7 @@ for i in range(paises):
     ouro = int(values[1])
     prata = int(values[2])
     bronze = int(values[3])
-    matriz.append(values)
+    matriz.append([pais, ouro, prata, bronze])
 
 matriz.sort(key=cmp_to_key(ordena))
 

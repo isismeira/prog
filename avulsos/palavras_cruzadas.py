@@ -79,4 +79,3 @@ jogo = [["j","s","x","c"],
 palavra = ["c","a","s","a"]
 
 verificar_jogo(jogo, palavra)
-

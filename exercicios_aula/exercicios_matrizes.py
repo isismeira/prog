@@ -178,3 +178,4 @@ matriz = [
 transformar_em_vetor(matriz)
 
 # 10) Palavras cruzadas
+# Exercício em avulso
