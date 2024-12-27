@@ -1,25 +1,38 @@
-valores = input().split()
+def maxLocal(matriz, n):
+    if n % 2 == 0:
+        raise ValueError("O tamanho da vizinhança n deve ser um número ímpar.")
+    
+    lista = []
+    rows, cols = len(matriz), len(matriz[0])
+    metade_n = n // 2
 
-numero_postos = int(valores[0])
-numero_carrinhos = int(valores[1])
-numero_leituras = int(valores[2])
+    # Itera por cada elemento que está na borda
+    for i in range(metade_n, rows - metade_n):
+        for j in range(metade_n, cols - metade_n): 
+            # Verifica se cada elemento na vizinhança de matriz[i][j] é menor do que o mesmo
+            eh_max_local = True
+            # Itera por cada elemento da vizinhança de matriz[i][j]
+            for k in range(i - metade_n, i + metade_n + 1):
+                for l in range(j - metade_n, j + metade_n + 1):
+                    if matriz[i][j] <= matriz[k][l] and (k != i or l != j):
+                        eh_max_local = False
+                        break
+                if not eh_max_local:
+                    break
+            if eh_max_local:
+                lista.append(matriz[i][j])
+    
+    return lista
 
-# Inicializa Listas de Controle
-proximo_posto = [1] * (numero_carrinhos + 1)  # Próximo posto que cada carrinho deve visitar
-postos_certos = [0] * (numero_carrinhos + 1)  # Contagem de postos corretos por carrinho
-ordem_cronologica = []  # Lista de carrinhos na ordem de leitura
+matriz = [
+    [1, 2, 3, 4, 5],
+    [5, 10, 7, 12, 9],
+    [9, 8, 9, 6, 5],
+    [4, 3, 2, 14, 0],
+    [0, 1, 2, 3, 4]
+]
 
-# Processamento das leituras
-for i in range(numero_leituras):
-    corredor, posto = map(int, input().split())
-    if posto == proximo_posto[corredor]:  # Verifica se o carrinho passou pelo posto correto
-        postos_certos[corredor] += 1  # Incrementa a contagem de postos corretos
-        proximo_posto[corredor] = (posto % numero_postos) + 1  # Atualiza o próximo posto esperado
-    ordem_cronologica.append(corredor)
+n = 3
 
-# Ordenação dos carrinhos
-carrinhos = list(range(1, numero_carrinhos + 1))
-carrinhos.sort(key=lambda c: (-postos_certos[c], ordem_cronologica.index(c)))
-
-# Saída
-print(*carrinhos)
+resultado = maxLocal(matriz, n)
+print(resultado)
