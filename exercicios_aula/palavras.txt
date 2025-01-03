@@ -1,0 +1,9 @@
+triangulo
+quadrado
+retangulo
+pentagono
+hexagono
+heptagono
+octogono
+circulo
+quadrado
