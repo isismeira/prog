@@ -1,38 +1,76 @@
-def maxLocal(matriz, n):
-    if n % 2 == 0:
-        raise ValueError("O tamanho da vizinhança n deve ser um número ímpar.")
-    
+import random
+
+lista1 = ["Cachorro", "Gato", "Elefante", "Tigre", "Leao", "Cavalo", "Urso", "Raposa", "Cobra", "Lobo"]
+
+lista2 = ["Mesa", "Cadeira", "Lampada", "Computador", "Cachorro", "Gato", "Leao", "Livro", "Relogio", "Caneta"]
+
+intersecao = []
+
+for i in lista1:
+    if i in lista2:
+        intersecao.append(i)
+
+maior_valor = 0
+
+for i in intersecao:
+    if len(i) > maior_valor:
+        maior_valor = len(i)
+
+matriz = []
+
+for i in range(maior_valor):
     lista = []
-    rows, cols = len(matriz), len(matriz[0])
-    metade_n = n // 2
+    for j in range(maior_valor):
+        j = chr(random.randint(ord('a'),ord('z')))
+        lista.append(j)
+    matriz.append(lista)
 
-    # Itera por cada elemento que está na borda
-    for i in range(metade_n, rows - metade_n):
-        for j in range(metade_n, cols - metade_n): 
-            # Verifica se cada elemento na vizinhança de matriz[i][j] é menor do que o mesmo
-            eh_max_local = True
-            # Itera por cada elemento da vizinhança de matriz[i][j]
-            for k in range(i - metade_n, i + metade_n + 1):
-                for l in range(j - metade_n, j + metade_n + 1):
-                    if matriz[i][j] <= matriz[k][l] and (k != i or l != j):
-                        eh_max_local = False
-                        break
-                if not eh_max_local:
-                    break
-            if eh_max_local:
-                lista.append(matriz[i][j])
-    
-    return lista
+preenchimento = ["diagonal", "horizontal", "vertical"]
+palavras = intersecao
+numeros_i = []
+numeros_j = []
 
-matriz = [
-    [1, 2, 3, 4, 5],
-    [5, 10, 7, 12, 9],
-    [9, 8, 9, 6, 5],
-    [4, 3, 2, 14, 0],
-    [0, 1, 2, 3, 4]
-]
+for i in range(maior_valor - 1):
+     numeros_i.append(i)
+     numeros_j.append(i)
 
-n = 3
+def colocarpalavras(matriz, numeros_i, numeros_j, preenchimento, palavra):
+    i =  0# random.choice(numeros_i)
+    j = 0 # random.choice(numeros_j)
+    direcao = "horizontal"#random.choice(preenchimento)
 
-resultado = maxLocal(matriz, n)
-print(resultado)
+    if direcao == "horizontal":
+        try:
+            for letra in range(len(palavra)):
+                matriz[i][j + letra] = palavra[letra]
+            for letra in range(len(palavra)):
+                numeros_i.remove(i)
+                numeros_j.remove(j + letra)   
+        except IndexError:
+            colocarpalavras(matriz, numeros_i, numeros_j, preenchimento, palavra)
+
+    elif direcao == "vertical":
+        try:
+            for letra in range(len(palavra)):
+                matriz[i + letra][j] = palavra[letra]
+            for letra in range(len(palavra)):
+                numeros_i.remove(i + letra)
+                numeros_j.remove(j) 
+        except IndexError: 
+            colocarpalavras(matriz, numeros_i, numeros_j, preenchimento, palavra) 
+
+    elif direcao == "diagonal":
+        try:
+            for letra in range(len(palavra)):
+                matriz[i + letra][j + letra] = palavra[letra]
+            for letra in range(len(palavra)):
+                numeros_i.remove(i + letra)
+                numeros_j.remove(j + letra)
+        except IndexError:
+            colocarpalavras(matriz, numeros_i, numeros_j, preenchimento, palavra)                               
+
+for palavra in intersecao:
+    colocarpalavras(matriz, numeros_i, numeros_j, preenchimento, palavra)
+
+for i in matriz:
+    print(*i)
