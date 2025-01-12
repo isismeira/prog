@@ -75,3 +75,39 @@ def selection_sort(arq):
 
 arq = "palavras.txt"
 selection_sort(arq)
+
+# obs. o gerador de caça palavras está na pasta "avulsos"
+
+# 3) Interseção das listas
+lista1 = ["Cachorro", "Gato", "Elefante", "Tigre", "Leao", "Cavalo", "Urso", "Raposa", "Cobra", "Lobo"]
+lista2 = ["Mesa", "Cadeira", "Lampada", "Computador", "Cachorro", "Gato", "Leao", "Livro", "Relogio", "Caneta"]
+
+intersecao = []
+
+for palavra in lista1:
+    if palavra in lista2:
+        intersecao.append(palavra)
+
+# 4) União das listas
+uniao = []
+
+for palavra in lista1:
+    uniao.append(palavra)
+for palavra in lista2:
+    if palavra not in uniao:
+        uniao.append(palavra)
+
+
+# 5) Diferença das listas
+
+diferenca = []
+
+for palavra in lista1:
+    if palavra not in intersecao:
+        diferenca.append(palavra)
+
+print(intersecao)
+print(uniao)
+print(diferenca)
+
+# 6) Exercício feito na pasta "avulsos"
