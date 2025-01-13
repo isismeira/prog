@@ -1,12 +1,12 @@
-def selection_sort(array):
-    for i in range(0, len(array) - 1):
-        indice_minimo_atual = i
-        for j in range(i+1, len(array)):
-            if array[j] < array[indice_minimo_atual]:
-                indice_minimo_atual = j
+with open("texto.txt", "rt", encoding="utf-8") as arquivo:
+    texto = arquivo.readlines()
 
-        array[i], array[indice_minimo_atual] = array[indice_minimo_atual], array[i]
+matriz = []
 
-array = [2, 6, 7, 4, 9, 3]
-selection_sort(array)
-print(array)   
+for i in texto:
+    linha = i.split(',')
+    for j in linha:
+        
+    matriz.append(linha)    
+
+print(matriz)           
