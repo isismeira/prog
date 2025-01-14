@@ -1,0 +1,5 @@
+Ana,19,88.5
+Carlos,21,75.0
+Beatriz,20,92.0
+Eduardo,22,85.0
+Fernanda,18,95.0
