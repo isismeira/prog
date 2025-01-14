@@ -1,0 +1,4 @@
+1,2025-01-01,250.50,Compra de Material de Escritório
+2,2025-01-03,1200.00,Pagamento de Serviços
+3,2025-01-10,89.90,Compra de Suprimentos
+4,2025-01-15,560.00,Manutenção de Equipamentos

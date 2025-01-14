@@ -1,0 +1,8 @@
+1,2025-01-01,250.50,Compra de Material de Escritório
+2,2025-01-03,1200.00,Pagamento de Serviços
+3,2025-01-10,89.90,Compra de Suprimentos
+4,2025-01-15,560.00,Manutenção de Equipamentos
+5,2025-01-20,75.50,Compra de Alimentos
+6,2025-01-25,300.00,Pagamento de Freelancer
+7,2025-02-01,450.00,Compra de Móveis
+8,2025-02-10,780.00,Despesas com Marketing

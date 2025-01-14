@@ -1,0 +1,8 @@
+Lápis,Material Escolar,100,1.50
+Caneta,Material Escolar,200,2.00
+Caderno,Material Escolar,50,10.00
+Mouse,Eletrônicos,30,50.00
+Teclado,Eletrônicos,20,80.00
+Monitor,Eletrônicos,15,600.00
+Cadeira de Escritório,Móveis,10,300.00
+Mesa de Escritório,Móveis,5,500.00
