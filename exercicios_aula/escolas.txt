@@ -1,1 +1,5 @@
-Colégio ABC ; Ingá ; Rua XYZ ; 
+Escola Municipal do Centro,Centro,Rua Principal,-23.5505,-46.6333
+Escola Estadual da Vila,Vila Mariana,Rua da Saúde,-23.6025,-46.6378
+Escola Comunitária,Moema,Rua das Flores,-23.5900,-46.6500
+Colégio São Paulo,Pompéia,Avenida Paulista,-23.5500,-46.6700
+Escola Novo Horizonte,Itaim Bibi,Rua Nova Esperança,-23.5800,-46.6300
