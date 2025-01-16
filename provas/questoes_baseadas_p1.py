@@ -69,4 +69,54 @@ while esp_baixo <= tamanho - 1:
     print((' ' * esp_baixo) + ('*' * ast_baixo))
     ast_baixo -= 2
     esp_baixo += 1
-     
+
+# 6) X
+n = int(input("Digite o tamanho do X (ímpar): "))
+
+if n % 2 == 0:
+    print("Por favor, insira um número ímpar.")
+else:
+    for i in range(n):
+        linha = ""
+        for j in range(n):
+            if j == i or j == n - i - 1: 
+                linha += "*"
+            else:
+                linha += " " 
+        print(linha)
+
+# 7) Triângulo de números
+tamanho = int(input("Digite aqui o tamanho da pirâmide: "))
+
+espacos = tamanho - 1
+numeros = 2
+
+while espacos >= 0:
+    for i in range(espacos):
+        print(' ', end='')
+    for j in range(1, numeros):
+        print(j, end='')
+        print(' ', end='') 
+    print('\n', end='')
+    espacos -= 1
+    numeros += 1
+
+# 8) Triângulo de Pascal
+def triangulo_de_pascal(n):
+    triangulo = []
+
+    for i in range(n):
+        linha = [1]  
+        if i > 0:
+            for j in range(1, i):
+                valor = triangulo[i - 1][j - 1] + triangulo[i - 1][j]
+                linha.append(valor)
+            linha.append(1) 
+        triangulo.append(linha)
+
+    for i in range(n):
+        espacos = ' ' * (n - i - 1)
+        print(espacos + ' '.join(map(str, triangulo[i])))
+
+linhas = int(input("Digite o número de linhas do Triângulo de Pascal: "))
+triangulo_de_pascal(linhas)                       
