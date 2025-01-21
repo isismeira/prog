@@ -1,18 +1,18 @@
-def triangulo_de_pascal(n):
-    triangulo = []
+def insere_linhas(matriz, indice):
+    matriz_nova = []
+    linha = [0] * len(matriz[0])
 
-    for i in range(n):
-        linha = [1]  
-        if i > 0:
-            for j in range(1, i):
-                valor = triangulo[i - 1][j - 1] + triangulo[i - 1][j]
-                linha.append(valor)
-            linha.append(1) 
-        triangulo.append(linha)
+    for i in range(len(matriz) + 1):
+        if i < indice:
+            matriz_nova.append(matriz[i])
+        elif i == indice:
+            matriz_nova.append(linha)
+        else:
+            matriz_nova.append(matriz[i-1])
+    return matriz_nova
 
-    for i in range(n):
-        espacos = ' ' * (n - i - 1)
-        print(espacos + ' '.join(map(str, triangulo[i])))
+matriz = [[1,2,3],
+          [4,5,6],
+          [7,8,9]]
 
-linhas = int(input("Digite o número de linhas do Triângulo de Pascal: "))
-triangulo_de_pascal(linhas)
+print(insere_linhas(matriz, 1))        

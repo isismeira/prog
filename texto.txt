@@ -1,1 +1,5 @@
-1,2,34,5,67,8,9
+O feudalismo foi a forma de organização social e econômica instituída na Europa Ocidental entre os séculos V a XV, durante a Idade Média. Baseava-se em grandes propriedades de terra, chamadas de feudos, que pertenciam aos senhores feudais, e a mão de obra era servil.
+
+Com a queda do Império Romano do Ocidente e a invasão dos povos bárbaros entre os séculos IV e V, a Europa atravessou um período de ruralização, isto é, os moradores da cidade se deslocaram para o campo, fugindo da instabilidade provocada pela movimentação dos bárbaros.
+
+A partir do século XV, o feudalismo entrou em crise por conta das mudanças ocorridas na Europa, como os renascimentos cultural, urbano e comercial.

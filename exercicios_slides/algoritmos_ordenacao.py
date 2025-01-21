@@ -34,6 +34,7 @@ def bubble_sort(array):
             if array[i] > array[j]:
                 array[i], array[j] = array[j], array[i]
 
+
 array = [2, 6, 7, 4, 9, 3]
 bubble_sort(array)
 print(array)
