@@ -95,4 +95,26 @@ def substituir(palavra, caracter):
             palavra_modificada += letra
     return palavra_modificada             
 
-print(substituir("Olá!", "!"))   
+print(substituir("Olá!", "!"))
+
+# Substituindo caracteres (sendo que tudo que estiver dentro das aspas não é removido)
+def remover_pontuacao(texto, simbolos):
+    novo_texto = ""
+    dentro_aspas = False
+
+    for letra in texto:
+        if letra == '"':
+            if dentro_aspas == False:
+                novo_texto += letra
+                dentro_aspas = True
+            elif dentro_aspas == True:    
+                novo_texto += letra
+                dentro_aspas = False
+        elif letra in simbolos and dentro_aspas == False:
+            continue
+        else:
+            novo_texto += letra
+
+    return novo_texto
+
+print(remover_pontuacao('..%#"texto.txt",,', ['.','%', '#', ","]))            
